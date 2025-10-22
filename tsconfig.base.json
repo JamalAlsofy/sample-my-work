@@ -17,8 +17,14 @@
     "paths": {
       "@angular-demo/care-ui-lib": ["libs/care-ui-lib/src/index.ts"],
       "@angular-demo/cdnlib": ["cdnlib/src/index.ts"],
+      "@angular-demo/critical-importer": [
+        "libs/critical-importer/src/index.ts"
+      ],
+      "@angular-demo/critical-state": ["libs/critical-state/src/index.ts"],
+      "@angular-demo/critical-ui": ["libs/critical-ui/src/index.ts"],
       "@angular-demo/glob-state": ["libs/glob-state/src/index.ts"],
       "@angular-demo/shared-state": ["libs/shared-state/src/index.ts"],
+      "@angular-demo/utils": ["libs/utils/src/index.ts"],
       "@my-org/my-lib": ["libs/care-lib/src/index.ts"],
       "merchant/Routes": ["merchant/src/app/remote-entry/entry.routes.ts"],
       "shop/Routes": ["shop/src/app/remote-entry/entry.routes.ts"],

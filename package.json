@@ -42,7 +42,7 @@
     "@angular/language-service": "~20.1.0",
     "@eslint/js": "^9.8.0",
     "@module-federation/enhanced": "^0.18.0",
-    "@ngrx/schematics": "^20.0.0",
+    "@ngrx/schematics": "^20.0.1",
     "@nx/devkit": "21.4.0",
     "@nx/eslint": "21.4.0",
     "@nx/eslint-plugin": "21.4.0",
