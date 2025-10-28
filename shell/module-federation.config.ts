@@ -15,9 +15,21 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: ['store', 'merchant', 'shop'],
+  
 };
 
 /**
  * Nx requires a default export of the config to allow correct resolution of the module federation graph.
  **/
 export default config;
+/**** 
+ import { withModuleFederation } from '@nx/angular/module-federation';
+import { shareAll } from '@nx/angular/module-federation/utils';
+
+export default withModuleFederation({
+  name: 'shell',
+  remotes: ['store', 'merchant', 'shop'],
+  shared: shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+});
+
+ */
