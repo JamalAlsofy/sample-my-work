@@ -72,7 +72,7 @@
     "@nx/angular:application": {
       "e2eTestRunner": "none",
       "linter": "eslint",
-      "style": "css",
+      "style": "scss",
       "unitTestRunner": "vitest"
     },
     "@nx/angular:library": {
@@ -80,7 +80,7 @@
       "unitTestRunner": "vitest"
     },
     "@nx/angular:component": {
-      "style": "css"
+      "style": "scss"
     }
   },
   "nxCloudId": "68e91d2f6f89d39f0a168c37",

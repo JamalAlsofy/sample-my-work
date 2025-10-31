@@ -7,24 +7,11 @@ import { ButtonModule } from 'primeng/button';
   selector: 'app-nx-welcome',
   imports: [CommonModule,CardModule,ButtonModule],
   template: `
-<div class="mb-4 p-8 flex items-center justify-center">
-    <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
-        <ng-template #header>
-            <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-        </ng-template>
-        <ng-template #title> Advanced Card </ng-template>
-        <ng-template #subtitle> Card subtitle </ng-template>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-        </p>
-        <ng-template #footer>
-            <div class="flex gap-4 mt-1">
-                <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
-                <p-button label="Save" class="w-full" styleClass="w-full" />
-            </div>
-        </ng-template>
-    </p-card>
+<div class="grid grid-cols-6 gap-4">
+  <div class=" col-span-4 col-start-2">01</div>
+  <div class="col-start-1 col-end-3">02</div>
+  <div class=" col-span-2 col-end-7">03</div>
+  <div class=" col-start-1 col-end-7">04</div>
 </div>
   `,
   styles: [],
