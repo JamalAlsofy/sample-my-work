@@ -1,0 +1,23 @@
+body.dark{
+  color: white;
+  background-color: #1E1E1E !important;
+}
+.dark{
+  .layout-topbar{
+    background-color: #242424;
+    .layout-topbar-button {
+      color: white;
+      background: #35373B;
+    }
+ }
+ .sidebar{
+    .sidebar-content{
+      background-color: #35373B;
+      color: #fff;
+    }
+ }
+ .p-card{
+  background: #35373B;
+  color: #fff;
+ }
+}

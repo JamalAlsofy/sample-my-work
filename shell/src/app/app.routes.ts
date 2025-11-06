@@ -1,4 +1,4 @@
-import { NxWelcome } from './nx-welcome';
+import { Cardmenu } from './cardmenu/cardmenu'
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
@@ -16,6 +16,6 @@ export const appRoutes: Route[] = [
   },
   {
     path: '',
-    component: NxWelcome,
+    component: Cardmenu,
   },
 ];
