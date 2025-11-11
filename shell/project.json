@@ -17,21 +17,15 @@
         "tsConfig": "shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "shell/src/assets",
+          "src/assets",
           {
 
             "glob": "**/*",
             "input": "shell/public"
              
 
-          },
-             {
-
-            "glob": "**/*",
-            "input": "shell/src/assets"
-             
-
           }
+  
         ],
         "styles": ["shell/src/styles.scss"],
         "customWebpackConfig": {

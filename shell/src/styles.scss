@@ -1,5 +1,7 @@
 @import 'tailwindcss';
  @import "primeicons/primeicons.css";
+ @import "./assets/layout/layout.scss";
+
 
 :root {
   --body-bg: var(--p-surface-50);
