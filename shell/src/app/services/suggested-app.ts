@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { SuggestedModel } from '../+state/suggest-app.models';
@@ -12,10 +12,12 @@ import { selectAllSuggestApp, selectSuggestAppLoaded } from '../+state/suggest-a
   providedIn: 'root'
 })
 export class SuggestedServices {
-
+  private readonly store = inject(Store);
+  //store: Store
   suggested$ = this.store.select(selectAllSuggestApp);
   loading$ = this.store.select(selectSuggestAppLoaded);
-  constructor(private store: Store) { }
+  constructor() { /* empty */ }
+
   private suggesteds: SuggestedModel[] = [
     { id: 's1', title: 'Shop', description: 'markting for selling and bay anything', url: 'shop', image: '' },
     { id: 's2', title: 'Store', description: 'markting for selling and bay anything', url: 'store', image: '' },
@@ -38,25 +40,7 @@ export class SuggestedServices {
     this.suggesteds = this.suggesteds.filter(p => p.id !== id);
     return of(id).pipe(delay(200));
   }
-  // loadsuggestes() {
-  //   this.store.dispatch(SuggestedActions.(suggested));
-  // }
-
-  // addSuggestedApps(suggested: any) {
-  //   this.store.dispatch(SuggestedActions.addSuggestedApps({ suggested }));
-  // }
-
-  // updateSuggestedApps(suggested: SuggestedModel) {
-  //   this.store.dispatch(SuggestedActions.updateSuggestedApps({ suggested }));
-  // }
-
-  // deleteSuggestedApps(id: string) {
-  //   this.store.dispatch(SuggestedActions.deleteSuggestedApps({ id }));
-  // }
-
-  // deleteMultiple(ids: string[]) {
-  //   this.store.dispatch(SuggestedActions.deleteSuggestedApps({ ids }));
-  // }
+ 
 
 }
 
