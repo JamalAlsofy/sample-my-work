@@ -1,0 +1,61 @@
+
+<p-dialog [header]="isEditMode ? 'Edit Product' : 'Add Product'" [(visible)]="visible" [modal]="true"
+    [style]="{ width: '500px' }" (onHide)="onHide()">
+
+    <form #productForm="ngForm" class="p-fluid grid gap-3">
+        <div class="field col-12">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" pInputText [(ngModel)]="formData.name" name="name" required class="w-full">
+        </div>
+
+        <div class="field col-12">
+            <label for="description">Description</label>
+            <textarea id="description" pInputText [(ngModel)]="formData.description" name="description" required
+                rows="3" class="w-full">
+      </textarea>
+        </div>
+
+        <div class="field col-12">
+            <label for="image">Image URL</label>
+            <input type="text" id="image" pInputText [(ngModel)]="formData.image" name="image" required class="w-full">
+        </div>
+
+        <div class="field col-6">
+            <label for="price">Price</label>
+            <p-inputNumber id="price" [(ngModel)]="formData.price" name="price" mode="currency" currency="USD"
+                locale="en-US" [min]="0" class="w-full">
+            </p-inputNumber>
+        </div>
+
+        <div class="field col-6">
+            <label for="quantity">Quantity</label>
+            <p-inputNumber id="quantity" [(ngModel)]="formData.quantity" name="quantity" [min]="0" class="w-full">
+            </p-inputNumber>
+        </div>
+
+        <div class="field col-6">
+            <label for="unit">Unit</label>
+            <input type="text" id="unit" pInputText [(ngModel)]="formData.unit" name="unit" required class="w-full">
+        </div>
+
+        <div class="field col-6">
+            <label for="barcode">Barcode</label>
+            <input type="text" id="barcode" pInputText [(ngModel)]="formData.barcode" name="barcode" required
+                class="w-full">
+        </div>
+
+        <div class="field col-12">
+            <label for="rating">Rating</label>
+            <p-rating id="rating" [(ngModel)]="formData.rating" name="rating" [required]="false">
+            </p-rating>
+        </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+        <button pButton icon="pi pi-times" label="Cancel" (click)="onHide()" class="p-button-text">
+        </button>
+        <button pButton icon="pi pi-check" label="Save" (click)="onSubmit()" [disabled]="!isValidForm()"
+            class="p-button-success">
+        </button>
+    </ng-template>
+</p-dialog>

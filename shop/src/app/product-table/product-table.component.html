@@ -1,0 +1,61 @@
+
+<div class="container mx-auto p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Product Management</h1>
+        <button pButton icon="pi pi-plus" label="Add Product" (click)="showAddDialog()"
+            class="bg-blue-600 hover:bg-blue-700">
+        </button>
+    </div>
+
+    <p-table [value]="(products$ | async)?.entities | keyvalue" [paginator]="true" [rows]="10"
+        styleClass="p-datatable-striped">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Barcode</th>
+                <th>Unit</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>
+                    <img [src]="product.value.image" [alt]="product.value.name" class="w-16 h-16 object-cover rounded">
+                </td>
+                <td class="font-semibold">{{ product.value.name }}</td>
+                <td>{{ product.value.barcode }}</td>
+                <td>{{ product.value.unit }}</td>
+                <td class="font-semibold text-green-600">
+                    ${{ product.value.price }}
+                </td>
+                <td>
+                    <span [class]="product.value.quantity === 0 ? 'text-red-500' : 'text-gray-600'">
+                        {{ product.value.quantity }}
+                    </span>
+                </td>
+                <td>
+                    <p-rating [ngModel]="product.value.rating" [readonly]="true" >
+                    </p-rating>
+                </td>
+                <td>
+                    <div class="flex gap-2">
+                        <button pButton icon="pi pi-pencil" class="p-button-warning p-button-sm"
+                            (click)="showEditDialog(product.value)">
+                        </button>
+                        <button pButton icon="pi pi-trash" class="p-button-danger p-button-sm"
+                            (click)="deleteProduct(product.value.id)">
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <app-product-form [visible]="displayDialog" [product]="selectedProduct" [isEditMode]="isEditMode"
+        (close)="onDialogClose()" (save)="onProductSaved($event)">
+    </app-product-form>
+</div>

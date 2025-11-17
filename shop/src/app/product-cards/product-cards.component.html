@@ -1,0 +1,81 @@
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Products Store</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        @if (products$ | async; as productsState) {
+
+        @for (product of productsState.entities | keyvalue; track product.key) {
+
+        <p-card [header]="product.value.name">
+
+            <!-- IMAGE -->
+            <ng-template pTemplate="header">
+                <img class="w-full h-48 object-cover" [src]="product.value.image" [alt]="product.value.name">
+            </ng-template>
+
+            <!-- DESCRIPTION -->
+            <p class="text-gray-600 mb-3 line-clamp-2">
+                {{ product.value.description }}
+            </p>
+
+            <!-- PRICE + STOCK -->
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-2xl font-bold text-green-600">
+                    ${{ product.value.price }}
+                </span>
+
+                <span class="font-semibold" [ngClass]="getStockColor(product.value.quantity)">
+                    {{ getStockStatus(product.value.quantity) }}
+                </span>
+            </div>
+
+            <!-- RATING -->
+            <div class="mb-4 flex items-center">
+                <p-rating [ngModel]="product.value.rating" (onRate)="rateProduct(product.value.id, $event.value)"
+                    >
+                </p-rating>
+
+                <span class="ml-2 text-sm text-gray-500">
+                    ({{ product.value.rating }}/5)
+                </span>
+            </div>
+
+            <!-- QUANTITY INPUT -->
+            <div class="flex items-center gap-2 mb-4">
+                <!-- <label class="text-sm font-medium">Qty:</label> -->
+                <label for="quantity">Qty:</label>
+
+                <p-inputNumber [(ngModel)]="purchaseQuantities[product.value.id]" [min]="1"
+                    [max]="product.value.quantity" [showButtons]="true" buttonLayout="horizontal"
+                    decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success"
+                    incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [allowEmpty]="false"
+                    mode="decimal" [disabled]="product.value.quantity === 0">
+                </p-inputNumber>
+
+                <span class="text-sm text-gray-500">
+                    {{ product.value.unit }}(s) available
+                </span>
+            </div>
+
+            <!-- FOOTER BUTTON -->
+            <ng-template pTemplate="footer">
+                <button pButton icon="pi pi-shopping-cart" label="Purchase" class="flex-1"
+                    (click)="purchaseProduct(product.value)" [disabled]="product.value.quantity === 0" [ngClass]="product.value.quantity === 0 ? 
+                                'p-button-secondary' : 'p-button-success'">
+                </button>
+            </ng-template>
+
+        </p-card>
+
+        }
+
+        }
+    </div>
+
+    @if ((products$ | async)?.ids?.length === 0) {
+    <div class="text-center py-12">
+        <p class="text-xl text-gray-500">No products available.</p>
+    </div>
+    }
+</div>
