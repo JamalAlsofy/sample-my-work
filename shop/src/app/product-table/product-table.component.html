@@ -1,12 +1,18 @@
 
 <div class="container mx-auto p-6">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold text-gray-800">Product Management</h1>
-        <button pButton icon="pi pi-plus" label="Add Product" (click)="showAddDialog()"
-            class="bg-blue-600 hover:bg-blue-700">
-        </button>
-    </div>
+  @defer {
+<div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">Product Management</h1>
+    <button pButton icon="pi pi-plus" label="Add Product" (click)="showAddDialog()"
+        class="bg-blue-600 hover:bg-blue-700">
+    </button>
+</div>
 
+  } @placeholder {
+    <h1 class="text-3xl font-bold text-gray-800">Product Management</h1>
+  } @loading {
+    Loading...<!--- primeng icon loading-->
+  }  
     <p-table [value]="(products$ | async)?.entities | keyvalue" [paginator]="true" [rows]="10"
         styleClass="p-datatable-striped">
         <ng-template pTemplate="header">

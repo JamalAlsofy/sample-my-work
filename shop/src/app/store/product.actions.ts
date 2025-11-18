@@ -14,7 +14,7 @@ export const loadProductsFailure = createAction(
 
 export const addProduct = createAction(
     '[Product] Add Product',
-    props<{ product: Omit<Product, 'id'> }>()
+    props<{ product: Omit<Product, 'id'> }>()// اضافة جميع خصائص product ما عدا  id
 );
 export const addProductSuccess = createAction(
     '[Product] Add Product Success',

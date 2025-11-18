@@ -2,7 +2,7 @@ import { Product } from './../models/product.model';
 import { ProductService } from './../services/product.service';
 import { ProductFormComponent } from './../product-form/product-form.component';
 // src/app/pages/product-table/product-table.component.ts
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     ProductFormComponent
   ],
-  templateUrl: './product-table.component.html'
+  templateUrl: './product-table.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductTableComponent implements OnInit {
   private productService = inject(ProductService);
