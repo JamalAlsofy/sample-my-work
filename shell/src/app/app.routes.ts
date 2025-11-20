@@ -3,7 +3,7 @@ import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
   {
     path: 'shop',
-    loadChildren: () => import('shop/Routes').then((m) => m!.appRoutes),
+    loadChildren: () => import('shop/Routes').then((m) => m!.remoteRoutes),
   },
   {
     path: 'merchant',

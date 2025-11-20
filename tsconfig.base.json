@@ -27,7 +27,7 @@
       "@angular-demo/utils": ["libs/utils/src/index.ts"],
       "@my-org/my-lib": ["libs/care-lib/src/index.ts"],
       "merchant/Routes": ["merchant/src/app/remote-entry/entry.routes.ts"],
-      "shop/Routes": ["shop/src/app/app.routes.ts"],
+      "shop/Routes": ["shop/src/app/remote-entry/entry.routes.ts"],
       "store/Routes": ["store/src/app/remote-entry/entry.routes.ts"]
     }
   },
