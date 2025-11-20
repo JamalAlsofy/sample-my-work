@@ -1,0 +1,66 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+   "products":[ 
+    { "id": 1,
+    "name": "string",
+    "description": "string",
+    "image": "string",
+    "price": 100,
+    "quantity": 50,
+    "unit": "string",
+    "barcode": "string",
+    "rating": 3,
+    "createdAt": "1/1/2024",
+    "updatedAt": "1/1/2024"
+},
+   { "id": 2,
+    "name": "string",
+    "description": "string",
+    "image": "string",
+    "price": 100,
+    "quantity": 50,
+    "unit": "string",
+    "barcode": "string",
+    "rating": 3,
+    "createdAt": "1/1/2024",
+    "updatedAt": "1/1/2024"
+},
+   { "id": 3,
+    "name": "string",
+    "description": "string",
+    "image": "string",
+    "price": 100,
+    "quantity": 50,
+    "unit": "string",
+    "barcode": "string",
+    "rating": 3,
+    "createdAt": "1/1/2024",
+    "updatedAt": "1/1/2024"
+},
+   { "id": 4,
+    "name": "string",
+    "description": "string",
+    "image": "string",
+    "price": 100,
+    "quantity": 50,
+    "unit": "string",
+    "barcode": "string",
+    "rating": 3,
+    "createdAt": "1/1/2024",
+    "updatedAt": "1/1/2024"
+}
+
+]
+  
+
+}
