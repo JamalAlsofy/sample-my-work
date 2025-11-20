@@ -1,10 +1,9 @@
-import { Cardmenu } from './cardmenu/cardmenu'
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
     path: 'shop',
-    loadChildren: () => import('shop/Routes').then((m) => m!.remoteRoutes),
+    loadChildren: () => import('shop/Routes').then((m) => m!.appRoutes),
   },
   {
     path: 'merchant',
